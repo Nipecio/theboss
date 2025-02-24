@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure the body and html take full height */
+    scroll-behavior: smooth;
+    background-color: #1B2A49;
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    height: 100vh; /* Makes the div take up the entire viewport height */
+    background-color: #1B2A49; /* Midnight Blue */
+    grid-template-rows: .5fr 3fr 5fr;
+    grid-template-columns: 1;
+}
+
+.landing-page {
+    font-size: 30px;
+    font-family: "Sigmar", serif;
+    color: #ECF0F1; /* Light Gray for text */
+    display: grid;
+    justify-content: center; /* Centers horizontally */
+    align-items: end;     /* Centers vertically */
+    text-align: center;      /* Ensures text is centered if it's on multiple lines */
+}
+
+.dotparent1 {
+    position: absolute;
+    padding: 10px;
+}     
+
+.dotparent2 {
+    position: absolute;
+    padding: 10px;
+    font-family: "Sigmar", serif;
+    font-size: 30px;
+    justify-self: end;
+    align-self: end;
+}  
+
+.dot1, .dot2, .dot3, .dot4, .dot5 {
+    word-spacing: 50px;
+    color: #c2ac38;
+}
+
+.text-lp {
+    display: grid;
+    grid-template-rows: 2;
+    grid-template-columns: 11;
+    justify-content: center;
+    align-items: start;
+}
+
+.hooked {
+    font-family: "Poppins", serif;
+    font-size: 20px;
+    color: rgb(160, 160, 160);
+    padding-left: 200px;
+    padding-right: 200px;
+    text-align: center; /* Aligns the text to the left */
+}
+
+.navbar {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 10fr 1fr 1fr;
+    grid-template-rows: 1;
+    justify-content: center;
+}
+
+
+.swordspng {
+    padding-left: 40px;
+    padding-top: 10px;
+}
+
+.nextbutton {
+    font-family: "Poppins", serif;
+    color: rgb(0, 0, 0);
+    width: 100px;
+    height: 50px;
+    align-self: start;
+    justify-self: center;
+    border-radius: 10px;
+    background-color: #c2ac38;
+    border: 2px solid #c2ac38;
+    transition: .3s ease;
+
+}
+
+.nextbutton:hover {
+    background-color: aliceblue;
+    border: 2px solid aliceblue;
+    cursor: pointer;
+}
+
+.aboutlinktext {
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", serif;
+    font-weight: bold;
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.aboutlink {
+    align-content: center;
+    position: relative;
+    display: inline-block;
+}
+
+.aboutlinktext::before {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Aligns with text bottom */
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #c2ac38;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.aboutlinktext:hover::before {
+    width: 100%;
+    left: 0;
+}                   
+
+#container2 {
+    display: grid;
+    grid-template-columns: .08fr 3fr 3fr 3fr .08fr;
+    grid-template-rows: .4fr 2fr .4fr;
+    height: 100vh;
+    width: 100%;
+    gap: 20px;
+}
+
+.card1 {
+    height: 100%;
+    width: 100%;
+    background-color: #c2ac38;
+    box-sizing: border-box;
+    grid-area: 2 / 2 / 3 / 3;
+    border-radius: 20px;
+    opacity: 50%;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 2;
+    transition: .3s ease;
+}
+
+.card1:hover {
+    border: 2px solid #c2ac38;
+    transform: scale(1.02);
+}
+
+.card2:hover {
+    border: 2px solid #c2ac38;
+    transform: scale(1.02);
+}
+
+.card3:hover {
+    border: 2px solid #c2ac38;
+    transform: scale(1.02);
+}
+.card2 {
+    height: 100%;
+    width: 100%;
+    background-color: #c2ac38;
+    box-sizing: border-box;
+    grid-area: 2 / 3 / 3 / 4;
+    border-radius: 20px;
+    opacity: 50%;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 2;
+    transition: .3s ease;
+}
+
+.card3 {
+    height: 100%;
+    width: 100%;
+    background-color: #c2ac38;
+    box-sizing: border-box;
+    grid-area: 2 / 4 / 3 / 5;
+    border-radius: 20px;
+    opacity: 50%;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 2;
+    transition: .3s ease;
+    box-sizing: border-box;
+}
+
+.textcard {
+    color: #1B2A49;
+    font-size: 70px;
+    text-align: center;
+    align-content: center;
+    font-family: "Poppins", serif;
+}
+
+.textcardtext {
+    color: rgb(0, 0, 0);
+    padding: 30px;
+    padding-bottom: 20px;
+    font-family: "Poppins", serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.sepfoot {
+    background: #1B2A49;
+    width: 100%;
+    height: 20px;
+}
+
+
+.footer {
+    background-color: #c2ac38;
+    justify-items: center;
+}
+
+.footertext {
+    color: white;
+    padding: 20px;
+    font-family: "Poppins", serif;
+}
+
+#container2 {
+    display: grid;
+    grid-template-columns: .08fr repeat(3, minmax(250px, 1fr)) .08fr;
+    grid-template-rows: .1fr auto .1fr;
+    height: 100vh;
+    width: 100%;
+    gap: 20px;
+}
+
+.container2text {
+    grid-area: 1 / 3 / 2/ 4;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    align-content: center;
+}
+
+.stuff {
+    font-family: "Sigmar", serif;
+    color: white;
+    font-size: 80px;
+}
+
+@media (max-width: 800px) {
+    #container2 {
+        grid-template-columns: .08fr minmax(250px, 1fr) .08fr;
+        grid-template-rows: repeat(4, 400px);
+    }
+
+    .card1 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    .card2 {
+        grid-area: 3 / 2 / 4 / 3;
+    }
+
+    .card3 {
+        grid-area: 4 / 2 / 5 / 3;
+    }
+
+    .container2text {
+        grid-area: 1 / 2 / 2/ 3;
+        height: 100%;
+        width: 100%;
+        justify-items: center;
+        align-content: center;
+    }
+    
+    .stuff {
+        font-family: "Sigmar", serif;
+        color: white;
+        font-size: 40px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .box3 {
+        grid-area: 2 / 2 / 3 / 6;
+        
+    }
+    .box2 {
+        grid-area: 3 / 2 / 4 / 4;
+        
+    }
+    .box1 {
+        grid-area: 3 / 4 / 4 / 6;
+        
+    }
+
+    .anon{
+        z-index: -1;
+    }
+
+}
+
+
+
+
+
+
+@media (max-width: 1060px) {
+    .landing-page {
+        font-size: 24px; /* Adjust the font size for smaller screens */
+    }
+
+    .hooked {
+        font-size: 16px; /* Adjust the font size for smaller screens */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 1800px) {
+    .dotparent1 {
+        z-index: -1;
+    }
+    .dotparent2 {
+        z-index: -1;
+    }
+}
+
+@media (max-width: 1150px) {
+    .landing-page {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .landing-page {
+        z-index: -1;
+        position: absolute;
+    }
+}
