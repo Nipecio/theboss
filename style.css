@@ -126,7 +126,7 @@ a::after {
     background: transparent;
     grid-area: 1 / 1 / 2 / 4;
     color: rgb(0, 0, 0);
-    font-size: 2em;
+    font-size: 25px;
     text-align: center;
     align-self: end;
     font-family: "Merriweather", sans-serif;
@@ -146,7 +146,7 @@ a::after {
 }
 
 .car-text4 {
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
     align-self: end;
     background: transparent;
