@@ -6,9 +6,12 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: beige;
     overflow-x: hidden;
     scroll-behavior: smooth;
+}
+
+body {
+    background-color: beige;
 }
 
 .landing {
@@ -50,47 +53,9 @@ a::after {
     transition: width 0.3s ease, left 0.3s ease;
 }
 
-a:hover {
-    color: rgb(255, 43, 43); /* Optional: Ensures color stays consistent */
-}
 
-a:hover::after {
-    width: 100%;
-    left: 0;
-}
 
-.nav {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr;
-}
 
-.navlinks1 {
-    grid-area: 1 / 4 / 1 / 5;
-}
-
-.navlinks2 {
-    grid-area: 1 / 5 / 1 / 6;
-}
-
-.navlinks3 {
-    grid-area: 1 / 6 / 1 / 7;
-}
-
-.lambologo {
-    padding-left: 10px;
-    padding-top: 10px;
-    height: 70px;
-    width: 70px;
-    grid-area: 1 /1 /1 /1 ;
-    transition: .3s ease;
-}
-
-.lambologo:hover {
-    transform: scale(1.02);
-}
 
 .car-text {
     grid-area: 1 /1 / 2 / 4;
@@ -321,6 +286,131 @@ a:hover::after {
     display: none;
 }
 
+/* Your existing navbar styles */
+/* Standard non-sticky navbar */
+/* Standard non-sticky navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0);
+    width: 100%;
+    position: static; /* Standard non-sticky behavior */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 60px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: rgb(255, 118, 118);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -1px;
+    left: 0;
+    background-color: rgb(255, 118, 118);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001; /* Higher z-index than the menu */
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: relative; /* Ensure proper stacking */
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;
+        padding-top: 90px; /* Increased padding to ensure links appear below navbar */
+        z-index: 999; /* Just below hamburger but above other content */
+    }
+
+    .nav-item {
+        margin: 1.5rem 0;
+        z-index: 1000; /* Ensure nav items are clickable */
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    /* When menu is active, bring navbar to front */
+    .navbar {
+        position: relative; /* Ensure proper stacking context */
+    }
+    
+    /* When menu is active, fix the navbar */
+    body:has(.nav-menu.active) .navbar {
+        position: fixed;
+    }
+}
 /* Default styles (mobile-first approach) */
 
 /* Small screens (phones, 481px and up) */
@@ -333,9 +423,7 @@ a:hover::after {
 
 /* Medium screens (tablets, 769px and up) */
 @media (min-width: 769px) {
-    body {
-        background-color: lightgreen;
-    }
+    
 }
 
 /* Large screens (desktops, 1025px and up) */

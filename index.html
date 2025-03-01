@@ -5,17 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anay Sura Portfolio</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <div class="nav">
-          <div>
-            <img class="lambologo" src="lambologo.png" alt="">
-          </div>
-          <div class="navlinks1"><a href="colors.html">Colors</a></div>
-          <div class="navlinks2"><a href="models.html">Models</a></div>
-          <div class="navlinks3"><a href="info.html">Info</a></div>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img class="logo" src="whitelambobull.jpg" alt="Lamborghini Logo">
+        </a>
         
-    </div>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="colors.html" class="nav-link">Colors</a>
+            </li>
+            <li class="nav-item">
+                <a href="models.html" class="nav-link">Models</a>
+            </li>
+            <li class="nav-item">
+                <a href="info.html" class="nav-link">Info</a>
+            </li>
+        </ul>
+        
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
     <div class="landing">
         <img class="redsmoke" src="redsmokefr.png" alt="">
         <img class="lambored" src="lambored.png"  alt="">
@@ -54,5 +73,68 @@
         </div>
        
     </section>
+
+    <script>
+        // JavaScript for responsive navbar
+        document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navbar = document.querySelector('.navbar');
+    
+    hamburger.addEventListener('click', function() {
+        // Toggle menu active state
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        
+        // Toggle fixed positioning on navbar when menu is open
+        if (navMenu.classList.contains('active')) {
+            // Fix the navbar position
+            navbar.style.position = 'fixed';
+            navbar.style.width = '100%';
+            navbar.style.top = '0';
+            
+            // Add padding to body to prevent content jump
+            document.body.style.paddingTop = navbar.offsetHeight + 'px';
+        } else {
+            // Return navbar to normal
+            navbar.style.position = 'static';
+            navbar.style.width = '100%';
+            
+            // Remove body padding
+            document.body.style.paddingTop = '0';
+        }
+    });
+    
+    // Close mobile menu when clicking on a nav link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            // Close the menu
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            
+            // Return navbar to normal
+            navbar.style.position = 'static';
+            document.body.style.paddingTop = '0';
+        });
+    });
+    
+    // Close menu when clicking outside of menu
+    document.addEventListener('click', function(event) {
+        // If the menu is open and the click is outside the menu and hamburger
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(event.target) && 
+            !hamburger.contains(event.target)) {
+            
+            // Close the menu
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            
+            // Return navbar to normal
+            navbar.style.position = 'static';
+            document.body.style.paddingTop = '0';
+        }
+    });
+});
+    </script>
 </body>
 </html>
